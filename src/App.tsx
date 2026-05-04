@@ -31,13 +31,16 @@ const ICON_MAP = {
   ShoppingBag: ShoppingBag,
 };
 
-const ImageWithFallback = ({ src, fallback, alt, className, onClick }: { src: string, fallback: string, alt: string, className?: string, onClick?: () => void }) => {
+const ImageWithFallback = ({ src, fallback, alt, className, onClick, loading = "lazy" }: { src: string, fallback: string, alt: string, className?: string, onClick?: () => void, loading?: "lazy" | "eager" }) => {
   return (
     <img 
       src={src} 
       alt={alt} 
       className={className} 
       onClick={onClick}
+      loading={loading}
+      decoding="async"
+      crossOrigin="anonymous"
       onError={(e) => {
         (e.target as HTMLImageElement).src = fallback;
       }}
@@ -149,6 +152,7 @@ export default function App() {
                 fallback="https://ui-avatars.com/api/?name=%D0%A8&background=2C1810&color=fff" 
                 alt="Логотип"
                 className="w-full h-full object-contain"
+                loading="eager"
               />
             </div>
             <div className="flex flex-col">
@@ -413,6 +417,7 @@ export default function App() {
                     fallback="https://ui-avatars.com/api/?name=%D0%A8&background=2C1810&color=fff" 
                     alt="Логотип"
                     className="w-full h-full object-contain"
+                    loading="eager"
                   />
                 </div>
                 <div className="flex flex-col">
