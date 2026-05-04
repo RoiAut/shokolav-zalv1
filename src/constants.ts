@@ -3,6 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import logo from "./assets/logo.jpg";
+import gallery1 from "./assets/gallery-1.jpg";
+import gallery2 from "./assets/gallery-2.jpg";
+import gallery3 from "./assets/gallery-3.jpg";
+
 export const CONTACT_INFO = {
   address: "Ворошилова 30А, Магнитогорск",
   mapLink: "https://yandex.com/maps/org/shokolad/72528152002/?ll=58.981037%2C53.361071&z=17",
@@ -12,21 +17,21 @@ export const CONTACT_INFO = {
 };
 
 export const IMAGES = {
-  logo: "https://sun6-21.userapi.com/s/v1/ig2/H686940-dO1b_100t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0t0.jpg?size=200x200&quality=96&crop=0,0,100,100&ava=1",
+  logo: logo,
   hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
-  promo: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
+  promo: "https://images.unsplash.com/photo-1561501900-3701fa6a0f64?q=80&w=1200&auto=format&fit=crop",
   gallery: [
-    "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800&auto=format&fit=crop",
+    gallery1,
+    gallery2,
+    gallery3,
   ],
   fallbacks: {
     hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
-    promo: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
+    promo: "https://images.unsplash.com/photo-1561501900-3701fa6a0f64?q=80&w=1200&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1467453278283-d1b7028ebaf5?q=80&w=800&auto=format&fit=crop",
+      gallery1,
+      gallery2,
+      gallery3,
     ]
   }
 };
