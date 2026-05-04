@@ -12,21 +12,21 @@ export const CONTACT_INFO = {
 };
 
 export const IMAGES = {
-  logo: "/images/logo.jpg",
+  logo: "/logo.jpg",
   hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
   promo: "https://images.unsplash.com/photo-1561501900-3701fa6a0f64?q=80&w=1200&auto=format&fit=crop",
   gallery: [
-    "/images/gallery-1.jpg",
-    "/images/gallery-2.jpg",
-    "/images/gallery-3.jpg",
+    "/gallery-1.jpg",
+    "/gallery-2.jpg",
+    "/gallery-3.jpg",
   ],
   fallbacks: {
     hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
     promo: "https://images.unsplash.com/photo-1561501900-3701fa6a0f64?q=80&w=1200&auto=format&fit=crop",
     gallery: [
-      "/images/gallery-1.jpg",
-      "/images/gallery-2.jpg",
-      "/images/gallery-3.jpg",
+      "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1467453278283-d1b7028ebaf5?q=80&w=800&auto=format&fit=crop",
     ]
   }
 };

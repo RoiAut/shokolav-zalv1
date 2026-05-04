@@ -39,12 +39,9 @@ const ImageWithFallback = ({ src, fallback, alt, className, onClick, loading = "
       className={className} 
       onClick={onClick}
       loading={loading}
-      decoding="async"
-      crossOrigin="anonymous"
       onError={(e) => {
         (e.target as HTMLImageElement).src = fallback;
       }}
-      referrerPolicy="no-referrer"
     />
   );
 };
