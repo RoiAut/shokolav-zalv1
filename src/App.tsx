@@ -18,7 +18,8 @@ import {
   ChevronRight,
   ChevronLeft,
   Infinity,
-  X
+  X,
+  ArrowUp
 } from "lucide-react";
 import { CONTACT_INFO, FEATURES, IMAGES } from "./constants";
 
@@ -48,6 +49,19 @@ const ImageWithFallback = ({ src, fallback, alt, className, onClick, loading = "
 
 export default function App() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const galleryImages = [
     { src: IMAGES.gallery[0], fallback: IMAGES.fallbacks.gallery[0] },
@@ -198,8 +212,8 @@ export default function App() {
               Уютный банкетный зал в Магнитогорске
             </span>
             <h1 className="font-display text-5xl md:text-8xl font-bold text-chocolate-dark leading-[0.9] mb-8">
-              Памятные события <br className="hidden md:block" />
-              <span className="text-chocolate-light italic">со вкусом шоколада</span>
+              Ваше идеальное <br className="hidden md:block" />
+              <span className="text-chocolate-light italic">торжество начинается здесь</span>
             </h1>
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-chocolate-medium/80 mb-10 leading-relaxed">
               Мы создаем атмосферу, в которой каждый гость чувствует себя особенным. 
@@ -399,15 +413,6 @@ export default function App() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="space-y-6 text-center md:text-left">
               <div className="flex items-center gap-4 justify-center md:justify-start">
-                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center p-1 overflow-hidden shadow-sm border border-chocolate-dark/5">
-                  <ImageWithFallback 
-                    src={IMAGES.logo} 
-                    fallback="https://ui-avatars.com/api/?name=%D0%A8&background=2C1810&color=fff" 
-                    alt="Логотип"
-                    className="w-full h-full object-contain"
-                    loading="eager"
-                  />
-                </div>
                 <div className="flex flex-col">
                   <span className="font-display text-2xl font-bold tracking-tighter text-chocolate-dark leading-none">
                     ШОКОЛАД
@@ -470,6 +475,24 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Scroll to Top Button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.5, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.5, y: 20 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={scrollToTop}
+            className="fixed bottom-8 right-8 z-[60] w-12 h-12 bg-chocolate-dark text-white rounded-full flex items-center justify-center shadow-2xl shadow-chocolate-dark/40 border border-white/10 backdrop-blur-sm hover:bg-chocolate-medium transition-colors"
+            aria-label="На самый верх"
+          >
+            <ArrowUp size={24} />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

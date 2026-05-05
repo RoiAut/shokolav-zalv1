@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+const BASE_PATH = import.meta.env.BASE_URL;
+
 export const CONTACT_INFO = {
   address: "Ворошилова 30А, Магнитогорск",
   mapLink: "https://yandex.com/maps/org/shokolad/72528152002/?ll=58.981037%2C53.361071&z=17",
@@ -12,13 +14,13 @@ export const CONTACT_INFO = {
 };
 
 export const IMAGES = {
-  logo: "/images/logo.jpg",
+  logo: `${BASE_PATH}images/logo.jpg`,
   hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
   promo: "https://images.unsplash.com/photo-1561501900-3701fa6a0f64?q=80&w=1200&auto=format&fit=crop",
   gallery: [
-    "/images/gallery-1.jpg",
-    "/images/gallery-2.jpg",
-    "/images/gallery-3.jpg",
+    `${BASE_PATH}images/gallery-1.jpg`,
+    `${BASE_PATH}images/gallery-2.jpg`,
+    `${BASE_PATH}images/gallery-3.jpg`,
   ],
   fallbacks: {
     hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
