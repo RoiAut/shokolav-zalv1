@@ -67,6 +67,7 @@ export default function App() {
     { src: IMAGES.gallery[0], fallback: IMAGES.fallbacks.gallery[0] },
     { src: IMAGES.gallery[1], fallback: IMAGES.fallbacks.gallery[1] },
     { src: IMAGES.gallery[2], fallback: IMAGES.fallbacks.gallery[2] },
+    { src: IMAGES.promo, fallback: IMAGES.fallbacks.promo },
   ];
 
   const handleNext = useCallback((e?: React.MouseEvent) => {
