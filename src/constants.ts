@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-const BASE_PATH = import.meta.env.BASE_URL;
+import logo from "./assets/images/logo.jpg";
+import gallery1 from "./assets/images/gallery-1.jpg";
+import gallery2 from "./assets/images/gallery-2.jpg";
+import gallery3 from "./assets/images/gallery-3.jpg";
 
 export const CONTACT_INFO = {
   address: "Ворошилова 30А, Магнитогорск",
@@ -14,13 +17,13 @@ export const CONTACT_INFO = {
 };
 
 export const IMAGES = {
-  logo: `${BASE_PATH}images/logo.jpg`,
+  logo,
   hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
   promo: "https://images.unsplash.com/photo-1561501900-3701fa6a0f64?q=80&w=1200&auto=format&fit=crop",
   gallery: [
-    `${BASE_PATH}images/gallery-1.jpg`,
-    `${BASE_PATH}images/gallery-2.jpg`,
-    `${BASE_PATH}images/gallery-3.jpg`,
+    gallery1,
+    gallery2,
+    gallery3,
   ],
   fallbacks: {
     hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
