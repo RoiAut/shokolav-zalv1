@@ -40,6 +40,7 @@ const ImageWithFallback = ({ src, fallback, alt, className, onClick, loading = "
       onClick={onClick}
       loading={loading}
       onError={(e) => {
+        console.warn('Image failed to load, switching to fallback:', src);
         (e.target as HTMLImageElement).src = fallback;
       }}
     />
@@ -47,6 +48,7 @@ const ImageWithFallback = ({ src, fallback, alt, className, onClick, loading = "
 };
 
 export default function App() {
+  console.log('Current IMAGES configuration:', IMAGES);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const galleryImages = [
@@ -337,7 +339,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:h-[600px]">
             <div 
-              className="md:col-span-2 row-span-2 rounded-[40px] overflow-hidden shadow-lg group cursor-zoom-in"
+              className="md:col-span-2 row-span-2 rounded-[40px] overflow-hidden shadow-lg group cursor-zoom-in min-h-[300px] md:min-h-0"
               onClick={() => setSelectedIndex(0)}
             >
               <ImageWithFallback 
@@ -348,7 +350,7 @@ export default function App() {
               />
             </div>
             <div 
-              className="rounded-[40px] overflow-hidden shadow-lg group cursor-zoom-in"
+              className="rounded-[40px] overflow-hidden shadow-lg group cursor-zoom-in h-64 md:h-full"
               onClick={() => setSelectedIndex(1)}
             >
               <ImageWithFallback 
@@ -359,7 +361,7 @@ export default function App() {
               />
             </div>
             <div 
-              className="rounded-[40px] overflow-hidden shadow-lg group cursor-zoom-in"
+              className="rounded-[40px] overflow-hidden shadow-lg group cursor-zoom-in h-64 md:h-full"
               onClick={() => setSelectedIndex(2)}
             >
               <ImageWithFallback 

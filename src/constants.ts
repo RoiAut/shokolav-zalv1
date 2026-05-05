@@ -12,13 +12,13 @@ export const CONTACT_INFO = {
 };
 
 export const IMAGES = {
-  logo: "/logo.jpg",
+  logo: "/images/logo.jpg",
   hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
   promo: "https://images.unsplash.com/photo-1561501900-3701fa6a0f64?q=80&w=1200&auto=format&fit=crop",
   gallery: [
-    "/gallery-1.jpg",
-    "/gallery-2.jpg",
-    "/gallery-3.jpg",
+    "/images/gallery-1.jpg",
+    "/images/gallery-2.jpg",
+    "/images/gallery-3.jpg",
   ],
   fallbacks: {
     hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop",
