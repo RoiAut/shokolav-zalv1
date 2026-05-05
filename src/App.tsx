@@ -143,15 +143,6 @@ export default function App() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-chocolate-cream/80 backdrop-blur-md border-b border-chocolate-dark/5">
         <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center p-1 overflow-hidden shadow-sm border border-chocolate-dark/5">
-              <ImageWithFallback 
-                src={IMAGES.logo} 
-                fallback="https://ui-avatars.com/api/?name=%D0%A8&background=2C1810&color=fff" 
-                alt="Логотип"
-                className="w-full h-full object-contain"
-                loading="eager"
-              />
-            </div>
             <div className="flex flex-col">
               <span className="font-display text-2xl font-bold tracking-tighter text-chocolate-dark leading-none">
                 ШОКОЛАД
