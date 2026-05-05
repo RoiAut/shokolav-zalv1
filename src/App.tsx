@@ -40,7 +40,6 @@ const ImageWithFallback = ({ src, fallback, alt, className, onClick, loading = "
       onClick={onClick}
       loading={loading}
       onError={(e) => {
-        console.warn('Image failed to load, switching to fallback:', src);
         (e.target as HTMLImageElement).src = fallback;
       }}
     />
@@ -48,7 +47,6 @@ const ImageWithFallback = ({ src, fallback, alt, className, onClick, loading = "
 };
 
 export default function App() {
-  console.log('Current IMAGES configuration:', IMAGES);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const galleryImages = [
