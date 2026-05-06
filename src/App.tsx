@@ -48,6 +48,7 @@ const ImageWithFallback = ({
     className={className}
     onClick={onClick}
     loading={loading}
+    referrerPolicy="no-referrer"
     onError={(e) => {
       (e.target as HTMLImageElement).src = fallback;
     }}
@@ -64,8 +65,7 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToTop = () =>
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   const galleryImages = [
     { src: IMAGES.gallery[0], fallback: IMAGES.fallbacks.gallery[0] },
@@ -88,9 +88,7 @@ export default function App() {
     (e?: React.MouseEvent) => {
       e?.stopPropagation();
       if (selectedIndex !== null) {
-        setSelectedIndex(
-          (selectedIndex - 1 + galleryImages.length) % galleryImages.length,
-        );
+        setSelectedIndex((selectedIndex - 1 + galleryImages.length) % galleryImages.length);
       }
     },
     [selectedIndex, galleryImages.length],
@@ -107,8 +105,7 @@ export default function App() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedIndex, handleNext, handlePrev]);
 
-  const selectedImage =
-    selectedIndex !== null ? galleryImages[selectedIndex] : null;
+  const selectedImage = selectedIndex !== null ? galleryImages[selectedIndex] : null;
 
   return (
     <div className="min-h-screen selection:bg-chocolate-light selection:text-white">
@@ -213,10 +210,7 @@ export default function App() {
       {/* Hero */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10 opacity-10">
-          <InfinityIcon
-            className="w-full h-full text-chocolate-light"
-            strokeWidth={0.5}
-          />
+          <InfinityIcon className="w-full h-full text-chocolate-light" strokeWidth={0.5} />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 text-center">
@@ -230,13 +224,11 @@ export default function App() {
             </span>
             <h1 className="font-display text-5xl md:text-8xl font-bold text-chocolate-dark leading-[0.9] mb-8">
               Ваше идеальное <br className="hidden md:block" />
-              <span className="text-chocolate-light italic">
-                торжество начинается здесь
-              </span>
+              <span className="text-chocolate-light italic">торжество начинается здесь</span>
             </h1>
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-chocolate-medium/80 mb-10 leading-relaxed">
-              Мы создаем атмосферу, в которой каждый гость чувствует себя
-              особенным. Доверьте нам организацию вашего торжества.
+              Мы создаем атмосферу, в которой каждый гость чувствует себя особенным. Доверьте нам
+              организацию вашего торжества.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
@@ -267,25 +259,15 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             <div className="space-y-2">
               <div className="text-4xl font-display italic font-bold">100%</div>
-              <div className="text-sm uppercase tracking-widest opacity-60">
-                Душевная атмосфера
-              </div>
+              <div className="text-sm uppercase tracking-widest opacity-60">Душевная атмосфера</div>
             </div>
             <div className="space-y-2">
-              <div className="text-4xl font-display italic font-bold">
-                Вкусная
-              </div>
-              <div className="text-sm uppercase tracking-widest opacity-60">
-                Домашняя кухня
-              </div>
+              <div className="text-4xl font-display italic font-bold">Вкусная</div>
+              <div className="text-sm uppercase tracking-widest opacity-60">Домашняя кухня</div>
             </div>
             <div className="space-y-2">
-              <div className="text-4xl font-display italic font-bold">
-                Подарок
-              </div>
-              <div className="text-sm uppercase tracking-widest opacity-60">
-                Украшение зала
-              </div>
+              <div className="text-4xl font-display italic font-bold">Подарок</div>
+              <div className="text-sm uppercase tracking-widest opacity-60">Украшение зала</div>
             </div>
           </div>
         </div>
@@ -316,12 +298,8 @@ export default function App() {
                   <div className="w-16 h-16 bg-chocolate-cream rounded-2xl flex items-center justify-center text-chocolate-light mb-8 group-hover:scale-110 transition-transform">
                     {Icon && <Icon size={32} />}
                   </div>
-                  <h3 className="text-2xl font-bold text-chocolate-dark mb-4">
-                    {feature.title}
-                  </h3>
-                  <p className="text-chocolate-medium/70 leading-relaxed">
-                    {feature.description}
-                  </p>
+                  <h3 className="text-2xl font-bold text-chocolate-dark mb-4">{feature.title}</h3>
+                  <p className="text-chocolate-medium/70 leading-relaxed">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -344,10 +322,9 @@ export default function App() {
                 <span className="text-chocolate-gold italic">в подарок</span>
               </h2>
               <p className="text-xl opacity-80 leading-relaxed max-w-lg">
-                Станьте подписчиком нашей группы ВКонтакте и получите
-                качественное, стильное оформление банкетного зала совершенно
-                бесплатно. Пусть ваш праздник будет идеальным до мельчайших
-                деталей!
+                Станьте подписчиком нашей группы ВКонтакте и получите качественное, стильное
+                оформление банкетного зала совершенно бесплатно. Пусть ваш праздник будет идеальным
+                до мельчайших деталей!
               </p>
               <a
                 href={CONTACT_INFO.vkLink}
@@ -430,8 +407,8 @@ export default function App() {
             Планируете провести важное <br /> мероприятие?
           </h2>
           <p className="text-xl text-chocolate-medium/70">
-            Мы будем счастливы, если вы доверите нам организацию вашего
-            торжества. Поводов много — праздник один!
+            Мы будем счастливы, если вы доверите нам организацию вашего торжества. Поводов много —
+            праздник один!
           </p>
           <a
             href={`tel:${CONTACT_INFO.phone.replace(/[^+\d]/g, "")}`}
@@ -459,8 +436,8 @@ export default function App() {
                 </div>
               </div>
               <p className="max-w-xs text-chocolate-medium/60 text-sm leading-relaxed mx-auto md:mx-0">
-                Банкетный зал с душевной атмосферой в самом сердце
-                Магнитогорска. Мы делаем ваши праздники незабываемыми.
+                Банкетный зал с душевной атмосферой в самом сердце Магнитогорска. Мы делаем ваши
+                праздники незабываемыми.
               </p>
             </div>
 
